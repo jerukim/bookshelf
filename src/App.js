@@ -14,6 +14,10 @@ export default function App() {
     console.log('login', formData)
   }
 
+  function handleRegister(formData) {
+    console.log('register', formData)
+  }
+
   return (
     <div>
       <Logo />
@@ -34,7 +38,9 @@ export default function App() {
         aria-label="Register"
         isOpen={openModal === 'register'}
         onDismiss={close}
-      ></Dialog>
+      >
+        <LoginForm buttonText="Register" onSubmit={handleRegister} />
+      </Dialog>
     </div>
   )
 }
