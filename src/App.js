@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Dialog} from '@reach/dialog'
 import {Logo} from './components/logo'
+import {LoginForm} from 'components/LoginForm'
 import '@reach/dialog/styles.css'
 
 export default function App() {
@@ -24,7 +25,9 @@ export default function App() {
         aria-label="Login"
         isOpen={openModal === 'login'}
         onDismiss={close}
-      ></Dialog>
+      >
+        <LoginForm buttonText="Login" onSubmit={handleLogin} />
+      </Dialog>
 
       <button onClick={openRegister}>Register</button>
       <Dialog
