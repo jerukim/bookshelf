@@ -17,7 +17,7 @@ test('login form renders a username input, password input and submit button', as
   render(<LoginForm {...props} />)
 
   screen.getByRole('textbox', {name: /username/i})
-  screen.getByRole('textbox', {name: /password/i})
+  screen.getByLabelText(/password/i)
   screen.getByRole('button', {name: props.buttonText})
 })
 
@@ -33,7 +33,7 @@ test('login form calls onSubmit and returns form data', async () => {
   render(<LoginForm {...props} />)
 
   const username = screen.getByRole('textbox', {name: /username/i})
-  const password = screen.getByRole('textbox', {name: /password/i})
+  const password = screen.getByLabelText(/password/i)
   const button = screen.getByRole('button', {name: props.buttonText})
 
   await userEvent.type(username, fakeLoginInput.username)

@@ -17,7 +17,7 @@ export function LoginForm({onSubmit, buttonText}) {
 
       <div>
         <label htmlFor="password">Password</label>
-        <input id="password" name="password" type="text" />
+        <input id="password" name="password" type="password" />
       </div>
 
       <button type="submit">{buttonText}</button>
