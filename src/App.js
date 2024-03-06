@@ -27,22 +27,30 @@ export default function App() {
       <div>
         <button onClick={openLogin}>Login</button>
         <Dialog
-          aria-label="Login"
+          aria-label="Login Form"
           isOpen={openModal === 'login'}
           onDismiss={close}
         >
-          <LoginForm buttonText="Login" onSubmit={handleLogin} />
+          <div>
+            <button onClick={close}>Close</button>
+            <h2>Login</h2>
+            <LoginForm buttonText="Login" onSubmit={handleLogin} />
+          </div>
         </Dialog>
       </div>
 
       <div>
         <button onClick={openRegister}>Register</button>
         <Dialog
-          aria-label="Register"
+          aria-label="Registration Form"
           isOpen={openModal === 'register'}
           onDismiss={close}
         >
-          <LoginForm buttonText="Register" onSubmit={handleRegister} />
+          <div>
+            <button onClick={close}>Close</button>
+            <h2>Register</h2>
+            <LoginForm buttonText="Register" onSubmit={handleRegister} />
+          </div>
         </Dialog>
       </div>
     </div>

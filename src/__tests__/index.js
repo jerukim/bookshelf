@@ -17,11 +17,11 @@ test('clicking login button opens login dialog', async () => {
 
   const button = screen.getByRole('button', {name: /Login/i})
 
-  expect(screen.queryByRole('dialog', {name: /login/i})).toBeNull()
+  expect(screen.queryByRole('dialog', {name: /login form/i})).toBeNull()
 
   await userEvent.click(button)
 
-  screen.getByRole('dialog', {name: /login/i})
+  screen.getByRole('dialog', {name: /login form/i})
 })
 
 test('clicking register button opens register dialog', async () => {
@@ -29,9 +29,9 @@ test('clicking register button opens register dialog', async () => {
 
   const button = screen.getByRole('button', {name: /Register/i})
 
-  expect(screen.queryByRole('dialog', {name: /register/i})).toBeNull()
+  expect(screen.queryByRole('dialog', {name: /registration form/i})).toBeNull()
 
   await userEvent.click(button)
 
-  screen.getByRole('dialog', {name: /register/i})
+  screen.getByRole('dialog', {name: /registration form/i})
 })
