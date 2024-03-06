@@ -16,7 +16,6 @@ beforeEach(() => {
 test('login form renders a username input, password input and submit button', async () => {
   render(<LoginForm {...props} />)
 
-  screen.getByRole('form')
   screen.getByRole('textbox', {name: /username/i})
   screen.getByRole('textbox', {name: /password/i})
   screen.getByRole('button', {name: props.buttonText})
@@ -33,7 +32,6 @@ test('login form calls onSubmit and returns form data', async () => {
 
   render(<LoginForm {...props} />)
 
-  screen.getByRole('form')
   const username = screen.getByRole('textbox', {name: /username/i})
   const password = screen.getByRole('textbox', {name: /password/i})
   const button = screen.getByRole('button', {name: props.buttonText})
