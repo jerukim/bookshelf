@@ -2,6 +2,22 @@ import styled from '@emotion/styled/macro'
 import {Dialog as ReachDialog} from '@reach/dialog'
 import * as mq from 'styles/media-queries'
 import * as colors from 'styles/colors'
+import {FaSpinner} from 'react-icons/fa'
+import {keyframes} from '@emotion/core'
+
+const spin = keyframes`
+  from {
+    transform: rotate(0)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+`
+
+export const LoadingSpinner = styled(FaSpinner)({
+  animation: `${spin} 1.5s ease-in-out infinite`,
+})
 
 export const Button = styled.button(({variant = 'primary'}) => ({
   padding: '10px 15px',
